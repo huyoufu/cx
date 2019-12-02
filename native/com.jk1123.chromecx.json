@@ -1,0 +1,14 @@
+{
+  //名字唯一 易读取 用来唯一表示程序名字
+  "name": "com.jk1123.chromecx",
+  //描述无所谓
+  "description": "chromecx",
+  //mac linux系统必须写全路径 写你本地程序所在位置
+  "path": "/Users/huyoufu/Library/Application Support/Google/Chrome/NativeMessagingHosts/chromecx",
+  //通过标准输入输出流 目前仅支持该格式
+  "type": "stdio",
+  "allowed_origins": [
+    //写自己的扩展插件的id
+    "chrome-extension://fhdnbiochpdpihojfcokloekmdodbgdd/"
+  ]
+}

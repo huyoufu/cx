@@ -68,6 +68,8 @@
   ],
   // 权限申请
   "permissions": [
+    //允许本地消息
+    "nativeMessaging",
     "contextMenus",
     // 右键菜单
     "tabs",

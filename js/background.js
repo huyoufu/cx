@@ -8,3 +8,24 @@ chrome.contextMenus.create({
         chrome.tabs.create({url: 'http://www.b1bj.com/s.aspx?ac=t&key=' + encodeURI(params.selectionText)});
     }
 });
+
+var port = chrome.runtime.connectNative('com.jk1123.chromecx');
+
+port.onMessage.addListener(function(msg) {
+    alert(msg.text)
+});
+port.onDisconnect.addListener(function() {
+    console.log("Disconnected");
+});
+chrome.contextMenus.create({
+    title: "查看比价信息",
+    onclick: function(){
+        port.postMessage({ text: "Hello" });
+    }
+});
+chrome.runtime.sendNativeMessage('com.jk1123.chromecx',
+    {"text":"你好啊啊实打实大所大所大所大所大所多"},
+    function(response) {
+        console.log("Received " + response.text);
+    });
+
